@@ -43,7 +43,7 @@ if __name__ == "__main__":
     parser.add_argument("--batch_size", type=int, default=32, required=True)
     parser.add_argument("--accum_batch", type=int, default=1,
                     help="the function is similar to accumn_grad",
-                    required=True)
+                    required=False)
     parser.add_argument("--iter_num", type=int, default=10, required=True)
 
     parser.add_argument("--mode", type=str, default="mean",

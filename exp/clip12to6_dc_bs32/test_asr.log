@@ -17,3 +17,10 @@
 2023-02-21 20:34:27,138 (test_asr:102) INFO: Loading model ckpt from exp/clip12to6_dc_bs32/asr_avg_valid10.pt
 2023-02-21 20:36:45,759 (test_asr:151) INFO: On 7176 Utts, Test wer : 6.168090488235575%
 2023-02-21 20:36:45,759 (test_asr:155) INFO: Test decoding RTF: 0.0019590907313011526
+2023-02-21 23:09:29,367 (utils:71) INFO: Set logging.INFO level.
+2023-02-21 23:09:29,367 (test_asr:58) INFO: output_dir: exp/clip12to6_dc_bs32
+2023-02-21 23:09:33,235 (test_asr:77) INFO: ASR model has: 6 layers
+2023-02-21 23:09:34,788 (test_asr:85) INFO: Num of model params: 55.101193M
+2023-02-21 23:09:40,950 (test_asr:102) INFO: Loading model ckpt from exp/clip12to6_dc_bs32/asr_avg_valid10.pt
+2023-02-21 23:12:01,672 (test_asr:151) INFO: On 7176 Utts, Test wer : 6.168090488235575%
+2023-02-21 23:12:01,672 (test_asr:155) INFO: Test decoding RTF: 0.00192635906054437

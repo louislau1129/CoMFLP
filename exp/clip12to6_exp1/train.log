@@ -5,3 +5,10 @@
 2023-02-21 16:04:54,526 (clip_finetune_train:288) INFO: --Initial learning rate: 2e-05
 2023-02-21 16:04:55,933 (clip_finetune_train:311) INFO: Testing on 320 utterances to check the WER ---
 2023-02-21 16:05:02,884 (clip_finetune_train:346) INFO: ----EPOCH: 0, Test wer : 11.082418764794491%
+2023-02-21 22:55:24,531 (utils:71) INFO: Set logging.INFO level.
+2023-02-21 22:55:30,183 (clip_finetune_train:233) INFO: --- CLIP 6 layers
+2023-02-21 22:55:30,183 (clip_finetune_train:234) INFO: --- Series Clipped layers: [[1, 1], [3, 3], [5, 5], [7, 7], [10, 10], [12, 12]]
+2023-02-21 22:55:36,677 (clip_finetune_train:282) INFO: Layerdrop of the clipped model: 0.1
+2023-02-21 22:55:36,677 (clip_finetune_train:292) INFO: --Initial learning rate: 2e-05
+2023-02-21 22:55:37,984 (clip_finetune_train:315) INFO: Testing on 320 utterances to check the WER ---
+2023-02-21 22:55:45,029 (clip_finetune_train:350) INFO: ----EPOCH: 0, Test wer : 11.082418764794491%
