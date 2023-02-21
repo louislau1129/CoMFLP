@@ -8,14 +8,51 @@ quite time-consuming especially when layers are very deep. In contrast to previo
 pruning strategy is shown to be high-quality and can serve as a good strating point for later fine-tuning.
 
 ### Code Structure and Usage:
+*We use clip12to6 as an example for illustration:*
 - Correlation Matrix Computation: Two correlation measure methods are adopted here, namely SVCCA [^2] and DC [^3]. 
 
-  1. Compute correlation matrix using SVCCA:
+  1. Compute correlation matrix among layers using SVCCA:
+  ```bash
+  python svcca_analysis.py --batch_size 32 --iter_num 300 --thre 0.99 --mode U
   ```
-  python svcca_analysis.py --batch_size 32 --iter_num 300 \
-                            --thre 0.99 --mode U
+  2. Compute correlation matrix among layers using DC:
+  ```bash
+  python dc_analysis.py --batch_size 4 --iter_num 10
   ```
-- csdcsd
+- Perform Coarse Search on the correlation matrix:
+```bash
+cd search_strategy
+python search_prune_then_verify_mix.py --num_layers 12 \
+                                       --num_clip_layers 6 \
+                                       --search_mode beam \
+                                       --select_measure dc \
+                                       --coarse_search_only true
+```
+where `select_measure` can switch to `svcca`. Note that the hyperparamteres for correlation measure computation should be consitent with the above setting: For SVCCA, you should provide arguments `bs=32`, `iter=300`, `svcca_mode=U` and `thre=0.99`; For DC, `bs=4` and `iter 10`.
+
+- Perform Fine-grained Search on top of the candidates provided by Coarse Search:
+```bash
+cd search_strategy
+python search_prune_then_verify_mix.py --num_layers 12 \
+                                       --num_clip_layers 6 \
+                                       --search_mode beam \
+                                       --select_measure dc 
+```
+Usually, you just need to run this one step to perform coarse search and fine-grained search sequentially.
+
+- (Optional) Fine-tuning based on a pruned model (select the desired pruning strategy from the previous step)
+```bash
+python clip_finetune_train.py --output_dir clip12to6_exp1 \
+                              --resume_epoch 0 \
+                              --num_layers 12 \
+                              --num_clip_layers 6
+```
+By default, it will fiine-tune the pruned model for 50 epochs, you can specify the `resume_epoch`. The fine_tuned model and the corresponding training log file `train.log` will be stored in the specified `output_dir` under `exp` dir.
+
+
+## Referenced repositories
+1. SVCCA measure computation: https://github.com/google/svcca
+2. DC measure computation: https://github.com/zhenxingjian/Partial_Distance_Correlation
 
 
 ### References
