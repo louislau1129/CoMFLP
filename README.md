@@ -1,7 +1,7 @@
 ## CoMFLP: Correlation Measure based Fast Search on Layer Pruning
 This repository contains code for the implementation of CoMFLP, a fast search layer pruning algorithm.
 
-*The corresponding paper is or will under peer review, and will coming soon~*
+*The corresponding paper is or will be under peer review, and will coming soon~*
 
 ### Background:
 The recently proposed DeepNet [^1] model scaled the transformer up to 1,000 layers. Despite the significant performance improvement, the model is inefficient and difficult to apply on the 
