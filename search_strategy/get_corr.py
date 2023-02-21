@@ -38,13 +38,13 @@ def setup_parser():
     
 
     parser.add_argument("--select_measure", type=str, default="dc",
-                        choices=["dc", "svcca", "cosine", "covcorr", "delta_mean"],
+                        choices=["dc", "svcca"],
                         help="measure can be dc mat or cca mat, even others")
     parser.add_argument("--beam_size", type=int, default=10)
 
     parser.add_argument("--bs", type=int, default=32)
     parser.add_argument("--iter", type=int, default=10)
-    parser.add_argument("--svcca_mode",type=str, default="T",
+    parser.add_argument("--svcca_mode",type=str, default="U",
                 help="can be T or U, U means utterance-level")
     parser.add_argument("--thre", type=float, default=0.99, 
                 help="the thre percentage of singular values", required=False)
@@ -62,17 +62,9 @@ if __name__ == "__main__":
     # loading the pre-computed dc matrix
     if args.num_layers == 12:
         if args.select_measure == "dc":
-            # dc_mat = np.load("../dump/dc_mat_mean_100.npy")    
             dc_mat = np.load(f"../dump/dc_mat_mean_bs{args.bs}_iter{args.iter}.npy")    
         elif args.select_measure == "svcca":
             dc_mat = np.load(f"../dump/cca_mat_{args.bs * args.iter}{args.svcca_mode}_svthre{args.thre}.npy") 
-        elif args.select_measure == "cosine":
-            dc_mat = np.load("../dump/dir_corr_mat_100.npy")
-        elif args.select_measure == "covcorr":
-            dc_mat = np.load("../dump/cov_corr_mat_100.npy")
-        elif args.select_measure == "delta_mean":
-            dc_mat = np.load("../dump/delta_mean_mat.npy")
-            dc_mat = -dc_mat
         else:
             raise RuntimeError(f"Not suported measure: {args.select_measure}")
     elif args.num_layers == 6:

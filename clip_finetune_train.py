@@ -188,6 +188,10 @@ if __name__ == "__main__":
     
     print(f"-- CLIP mode: {args.clip_mode}")
     if args.clip_mode == "simple_copy":
+        '''
+        Put the pruning strategy here, as a starting point to fine-tune.
+        '''
+        
         # series_clipped_layers=[[2,4], [7,9]]
         # series_clipped_layers=[[2,4], [7,8], [11,11]]
         series_clipped_layers = [[1,1], [3,3], [5,5], [7,7], [9,9], [11,11]]
@@ -291,8 +295,8 @@ if __name__ == "__main__":
     # lr_scheduler = get_linear_schedule_with_warmup(optim,
     #                     num_warmup_steps=30000, num_training_steps=len(asr_dataloader)*max_epoch)
 
-    milestones1 = [20, 40, 50]
-    milestones2 = [10, 40, 50]
+    # milestones1 = [20, 40, 50]
+    # milestones2 = [10, 40, 50]
     # lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(
     #     optim, milestones=milestones2, gamma=0.5
     # )

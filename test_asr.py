@@ -7,17 +7,9 @@ import pdb
 from data import SpeechDataset, SpeechCollate
 from torch.utils.data import DataLoader, Dataset
 
-
-from transformers import Trainer, TrainingArguments
-
 from tqdm import tqdm
 from utils import set_seed, relocate, str2bool
-
-from torch.optim import AdamW, Adam
-
-from torch.optim.lr_scheduler import LambdaLR
-
-from train import ASRDataset, ASRCollate, ExtendedWav2Vec2ForCTC
+from clip_finetune_train import ExtendedWav2Vec2ForCTC
 
 
         
@@ -30,10 +22,9 @@ def setup_parser():
     parser.add_argument("--resume_epoch", type=int, default=0, required=True)
 
 
-    parser.add_argument("--num_layers", type=int, default=12)
+    parser.add_argument("--num_layers", type=int, default=12, required=True)
     parser.add_argument("--pretrained_path_name", type=str,
-                        default="kehanlu/mandarin-wav2vec2-aishell1",
-                        # default="qinyue/wav2vec2-large-xlsr-53-chinese-zn-cn-aishell1"
+                        default="kehanlu/mandarin-wav2vec2-aishell1"
                     )
     parser.add_argument("--use_pretrained", type=str2bool, default=True)
 
@@ -68,10 +59,10 @@ if __name__ == "__main__":
 
     set_seed(seed=args.seed)
 
-    # test_wav_scp = "/home/louislau/research/prep_mfa/data/AISHELL1/aishell_test/wav.scp"
-    test_wav_scp = "/home/louislau/research/prep_mfa/data/AISHELL1/aishell_dev/wav.scp"
-    # test_text_file = "/home/louislau/research/prep_mfa/data/AISHELL1/aishell_test/text"
-    test_text_file = "/home/louislau/research/prep_mfa/data/AISHELL1/aishell_dev/text"
+    test_wav_scp = "/home/louislau/research/prep_mfa/data/AISHELL1/aishell_test/wav.scp"
+    # test_wav_scp = "/home/louislau/research/prep_mfa/data/AISHELL1/aishell_dev/wav.scp"
+    test_text_file = "/home/louislau/research/prep_mfa/data/AISHELL1/aishell_test/text"
+    # test_text_file = "/home/louislau/research/prep_mfa/data/AISHELL1/aishell_dev/text"
     
     test_dataset = SpeechDataset(wav_scp=test_wav_scp, text_file=test_text_file)
     print("--- test dataset constructed done")
@@ -96,17 +87,16 @@ if __name__ == "__main__":
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model.to(device)
     model.eval() 
-    # wer_metric = load_metric("wer")  
-    wer_metric = load_metric("cer")  
+    
+    wer_metric = load_metric("wer")  
     
     if args.use_pretrained and args.num_layers == 12:
-        # ckpt = "./kehanlu_hgface_asr.pt"
-        # model.load_state_dict(torch.load(ckpt))
         model = model.from_pretrained("kehanlu/mandarin-wav2vec2-aishell1")
         model.to(device)
         logging.info(f"Loading model ckpt from pretrained hgface model")
     if args.resume_epoch > 0:
         ckpt = os.path.join(args.output_dir, f'asr_ep{args.resume_epoch}.pt')
+        # using the averaged model
         ckpt = os.path.join(args.output_dir, f'asr_avg_valid10.pt')
         model.load_state_dict(torch.load(ckpt))
         logging.info(f"Loading model ckpt from {ckpt}")
@@ -130,7 +120,6 @@ if __name__ == "__main__":
         inputs = processor(audio_input, sampling_rate=sample_rate, 
                             padding=True, return_tensors="pt",
                             return_attention_mask=True,
-                                # dtype=torch.float32
                             )
         inputs['input_values'] = inputs['input_values'].float()
         inputs = relocate(inputs, device)
@@ -141,15 +130,16 @@ if __name__ == "__main__":
             predicted_ids = torch.argmax(logits, dim=-1)
             transcription = processor.batch_decode(predicted_ids)
             decode_time += (time.time() - start_time)
+            
+            # if return_attention_mask=True, can uncomment the following line
             # utterance_time += torch.sum(inputs['attention_mask']) / sample_rate
             B, T = inputs["input_values"].shape
             utterance_time += B*T / sample_rate
             label_transcription = batch['text']
 
-            # seems wer here need to separated by space
-            # pdb.set_trace()
-            # transcription = [" ".join(t) for t in transcription]
-            # label_transcription = [" ".join(t) for t in label_transcription]
+            # wer here need to separated by space
+            transcription = [" ".join(t) for t in transcription]
+            label_transcription = [" ".join(t) for t in label_transcription]
 
             ASR_Trans += transcription
             Label_Trans += label_transcription
@@ -158,7 +148,6 @@ if __name__ == "__main__":
     # print(f"Decoding Elapsed {time.time() - start_time}")
     wer = wer_metric.compute(predictions=ASR_Trans,
                                     references=Label_Trans) 
-    # print(f"----EPOCH: {epoch}, Test wer : {wer*100}%")
     logging.info(f"On {len(Label_Trans)} Utts, Test wer : {wer*100}%")
 
     # real time factor, decoding time ratio:

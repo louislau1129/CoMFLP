@@ -40,10 +40,6 @@ class ExtendedWav2Vec2ForCTC(Wav2Vec2ForCTC):
                 self.lm_head
         )
 
-# W2V2_PROCESSOR = Wav2Vec2Processor.from_pretrained(
-#            "kehanlu/mandarin-wav2vec2-aishell1"
-#       )
-
 
 
 def downlayer_copy_weight(deepnet_statedict, 
@@ -109,7 +105,6 @@ if __name__ == "__main__":
     set_seed(args.seed)
     
     model = ExtendedWav2Vec2ForCTC.from_pretrained("kehanlu/mandarin-wav2vec2-aishell1")
-    # model.config.output_hidden_states = True
 
     if args.num_layers == 6:
         # 5.2% wer, 19.8 ctc loss
@@ -131,7 +126,6 @@ if __name__ == "__main__":
     
     new_config = model.config
     new_config.num_hidden_layers = args.num_layers - args.num_clip_layers
-    # new_config.update({'connect_layers': [0, 2]})
 
     print("--- Construct the clipped model")
     clipped_model = ExtendedWav2Vec2ForCTC(config=new_config)
@@ -188,8 +182,6 @@ if __name__ == "__main__":
     
     processor = Wav2Vec2Processor.from_pretrained("kehanlu/mandarin-wav2vec2-aishell1")
 
-    # audio_input, sample_rate = sf.read(
-    #     "/lan/ibdata/SPEECH_DATABASE/aishell/data_aishell/wav/dev/S0724/BAC009S0724W0121.wav")
 
     print("--- Construct the dataset")
     # wav_scp = "/home/louislau/research/prep_mfa/data/AISHELL1/aishell_train/wav.scp"
@@ -229,7 +221,6 @@ if __name__ == "__main__":
             model_output = model(**inputs)
             clipped_logits = clipped_model_output.logits
             logits = model_output.logits
-            # hidden_states = model_output.hidden_states
             clipped_predicted_ids = torch.argmax(clipped_logits, dim=-1)
             predicted_ids = torch.argmax(logits, dim=-1)
             clipped_transcription = processor.batch_decode(clipped_predicted_ids)
@@ -245,22 +236,6 @@ if __name__ == "__main__":
             Clipped_ASR_Trans += clipped_transcription
             Label_Trans += label_transcription
 
-            '''
-            # compute wer over this batch list
-            wer = wer_metric.compute(predictions=transcription,
-                                    references=label_transcription) 
-            clipped_wer = wer_metric.compute(predictions=clipped_transcription,
-                                    references=label_transcription) 
-
-            print(f"wer : {wer*100}%")   
-            print(f"clipped wer : {clipped_wer*100}%")   
-            pdb.set_trace()
-            
-        for t, clipped_t in zip(transcription, clipped_transcription):
-            print(f'asr: {t}')
-            print(f'clipped asr: {clipped_t}')
-        pdb.set_trace()
-        '''
     print(f"Decoding Elapsed {time.time() - start_time}")
     print(f"-- WER stats on {len(Label_Trans)} utterances")
     wer = wer_metric.compute(predictions=ASR_Trans,
@@ -270,13 +245,6 @@ if __name__ == "__main__":
 
     print(f"wer : {wer*100}%")
     print(f"clipped wer : {clipped_wer*100}%")   
-
-    # for k,v in clipped_model.named_parameters():
-    #     if k.startswith("wav2vec2.encoder.layers"):
-
-
-
-    print("done")
 
     
 

@@ -1,0 +1,19 @@
+2023-01-17 14:53:00,640 (utils:72) INFO: Set logging.INFO level.
+2023-01-17 14:53:00,641 (test_asr:67) INFO: output_dir: exp/clip12to6_dcbs32
+2023-01-17 14:53:04,168 (test_asr:86) INFO: ASR model has: 6 layers
+2023-01-17 14:53:05,392 (test_asr:94) INFO: Num of model params: 55.101193M
+2023-01-17 14:53:09,652 (test_asr:110) INFO: Loading model ckpt from exp/clip12to6_dcbs32/asr_avg_valid10.pt
+2023-01-17 14:55:37,734 (test_asr:158) INFO: On 14326 Utts, Test wer : 5.763583502564027%
+2023-01-17 14:55:37,735 (test_asr:162) INFO: Test decoding RTF: 0.0017104451544582844
+2023-02-21 20:27:14,267 (utils:71) INFO: Set logging.INFO level.
+2023-02-21 20:27:14,267 (test_asr:58) INFO: output_dir: exp/clip12to6_dc_bs32
+2023-02-21 20:27:18,296 (test_asr:77) INFO: ASR model has: 12 layers
+2023-02-21 20:27:20,595 (test_asr:85) INFO: Num of model params: 97.628425M
+2023-02-21 20:27:27,816 (test_asr:96) INFO: Loading model ckpt from pretrained hgface model
+2023-02-21 20:34:15,132 (utils:71) INFO: Set logging.INFO level.
+2023-02-21 20:34:15,132 (test_asr:58) INFO: output_dir: exp/clip12to6_dc_bs32
+2023-02-21 20:34:19,096 (test_asr:77) INFO: ASR model has: 6 layers
+2023-02-21 20:34:20,699 (test_asr:85) INFO: Num of model params: 55.101193M
+2023-02-21 20:34:27,138 (test_asr:102) INFO: Loading model ckpt from exp/clip12to6_dc_bs32/asr_avg_valid10.pt
+2023-02-21 20:36:45,759 (test_asr:151) INFO: On 7176 Utts, Test wer : 6.168090488235575%
+2023-02-21 20:36:45,759 (test_asr:155) INFO: Test decoding RTF: 0.0019590907313011526

@@ -34,7 +34,7 @@ import torch.nn as nn
 from datasets import load_metric
 import argparse
 
-from train import ExtendedWav2Vec2ForCTC
+from clip_finetune_train import ExtendedWav2Vec2ForCTC
 from copy_clipped_model import downlayer_copy_weight_series
 
 from DC import distance_matrix, distance_correlation_from_distmat
