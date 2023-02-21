@@ -1,6 +1,8 @@
 ## CoMFLP: Correlation Measure based Fast Search on Layer Pruning
 This repository contains code for the implementation of CoMFLP, a fast search layer pruning algorithm.
 
+*The corresponding paper is or will under peer review, and will coming soon~*
+
 ### Background:
 The recently proposed DeepNet [^1] model scaled the transformer up to 1,000 layers. Despite the significant performance improvement, the model is inefficient and difficult to apply on the 
 edge device. Layer pruning (LP) is a reasonable method considering the layer redundancy. However, previous LP methods mostly rely on an task-specific evaluation metric to search, which is
@@ -72,7 +74,7 @@ Although performed in a greedy manner, still very time-consuming for large `num_
 
 
 ## Experimental Data and Model
-- Data
+- **Data**:
 We test the effectiveness of the proposed **CoMFLP** on the ASR task. Specificlly, the dataset used is AISHELL-1 [^4] for Chinese speech recognition.
 The data_resource paths shown in the scripts are as follows:
 ```bash
@@ -81,7 +83,7 @@ The data_resource paths shown in the scripts are as follows:
 ```
 We put the above `AISHELL1` directory in the current repository for your reference, the data format follows kaldi style.
 
-- Model
+- **Model**:
 The original ASR deep model is exported from the Huggingface website. Due to the limited computational resources, we only test `12-layer` and `24-layer` transformers. (Note that only `12-layer` example code is given in this repository, however, it is easy to extend it to `24-layer` or other number of layers.)
 *We really appreciate if interested people could help using this CoMFLP method to test on much deeper layers under different tasks.* 
 
