@@ -1,7 +1,7 @@
 ## CoMFLP: Correlation Measure based Fast Search on Layer Pruning
 This repository contains code for the implementation of CoMFLP, a fast search layer pruning algorithm.
 
-*The corresponding paper is or will be under peer review, and will coming soon~*
+*The corresponding paper is under peer review, and will come soon~*
 
 ### Background:
 > The recently proposed DeepNet [^1] model scaled the transformer up to 1,000 layers. Despite the significant performance improvement, the model is inefficient and difficult to apply on the edge device. Layer pruning (LP) is a reasonable method considering the layer redundancy. However, previous LP methods mostly rely on an task-specific evaluation metric to search, which is quite time-consuming especially when layers are very deep. In contrast to previous methods, the proposed CoMFLP has a very fast search speed with a consant time complexity. Also the searched pruning strategy is shown to be high-quality and can serve as a good strating point for later fine-tuning.
@@ -12,13 +12,17 @@ The complete conda environment is exported as `environment.yml`, and `python==3.
 
 ### Code Structure and Usage:
 *We use **clip12to6** as an example for illustration:*
+
+> **Note that** some of the core code is temporarily under a private state (see `.gitignore`). 
+> All of them will be made public after paper publication.
+
 - Correlation Matrix computation: two correlation measure methods are adopted here, namely SVCCA [^2] and DC [^3]. 
 
-  1. Compute correlation matrix among layers using SVCCA:
+  1. Compute correlation matrix using SVCCA:
   ```bash
   python svcca_analysis.py --batch_size 32 --iter_num 300 --thre 0.99 --mode U
   ```
-  2. Compute correlation matrix among layers using DC:
+  2. Compute correlation matrix using DC:
   ```bash
   python dc_analysis.py --batch_size 4 --iter_num 10
   ```
@@ -86,7 +90,7 @@ We put the above `AISHELL1` directory in the current repository for your referen
 
 - **Model**:
 
-> The original ASR deep model is exported from the Huggingface website. Due to the limited computational resources, we only test `12-layer` and `24-layer` transformers. (Note that only `12-layer` example code is given in this repository, however, it is easy to extend it to `24-layer` or other number of layers.)
+> The original ASR deep model is exported from the Huggingface website. Due to the limited computational resources, we only test `12-layer` and `24-layer` transformers. (Note that only `12-layer` example code is given in this repository, and it is easy to extend it to `24-layer` or other number of layers.)
 
 *We really appreciate if interested people could help using this CoMFLP method to test on much deeper layers under different tasks.* 
 

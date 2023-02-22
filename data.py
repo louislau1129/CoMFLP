@@ -76,7 +76,7 @@ class SpeechCollate():
 
 
 if __name__ == "__main__":
-    wav_scp = "/home/louislau/research/prep_mfa/data/AISHELL1/aishell_train/wav.scp"
+    wav_scp = "/home/userxx/research/prep_mfa/data/AISHELL1/aishell_train/wav.scp"
     dataset = SpeechDataset(wav_scp=wav_scp)
 
     dataloader = DataLoader(dataset, batch_size=32, shuffle=True,

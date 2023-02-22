@@ -169,10 +169,10 @@ if __name__ == "__main__":
     #     "/lan/ibdata/SPEECH_DATABASE/aishell/data_aishell/wav/dev/S0724/BAC009S0724W0121.wav")
 
     print("--- Construct the dataset")
-    # wav_scp = "/home/louislau/research/prep_mfa/data/AISHELL1/aishell_train/wav.scp"
-    wav_scp = "/home/louislau/research/prep_mfa/data/AISHELL1/aishell_test/wav.scp"
-    # text_file = "/home/louislau/research/prep_mfa/data/AISHELL1/aishell_train/text"
-    text_file = "/home/louislau/research/prep_mfa/data/AISHELL1/aishell_test/text"
+    # wav_scp = "/home/userxx/research/prep_mfa/data/AISHELL1/aishell_train/wav.scp"
+    wav_scp = "/home/userxx/research/prep_mfa/data/AISHELL1/aishell_test/wav.scp"
+    # text_file = "/home/userxx/research/prep_mfa/data/AISHELL1/aishell_train/text"
+    text_file = "/home/userxx/research/prep_mfa/data/AISHELL1/aishell_test/text"
 
     dataset = SpeechDataset(wav_scp=wav_scp, text_file=text_file)
     dataloader = DataLoader(dataset, batch_size=32, shuffle=False,

@@ -59,10 +59,10 @@ if __name__ == "__main__":
 
     set_seed(seed=args.seed)
 
-    test_wav_scp = "/home/louislau/research/prep_mfa/data/AISHELL1/aishell_test/wav.scp"
-    # test_wav_scp = "/home/louislau/research/prep_mfa/data/AISHELL1/aishell_dev/wav.scp"
-    test_text_file = "/home/louislau/research/prep_mfa/data/AISHELL1/aishell_test/text"
-    # test_text_file = "/home/louislau/research/prep_mfa/data/AISHELL1/aishell_dev/text"
+    test_wav_scp = "/home/userxx/research/prep_mfa/data/AISHELL1/aishell_test/wav.scp"
+    # test_wav_scp = "/home/userxx/research/prep_mfa/data/AISHELL1/aishell_dev/wav.scp"
+    test_text_file = "/home/userxx/research/prep_mfa/data/AISHELL1/aishell_test/text"
+    # test_text_file = "/home/userxx/research/prep_mfa/data/AISHELL1/aishell_dev/text"
     
     test_dataset = SpeechDataset(wav_scp=test_wav_scp, text_file=test_text_file)
     print("--- test dataset constructed done")
