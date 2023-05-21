@@ -1,7 +1,7 @@
 ## CoMFLP: Correlation Measure based Fast Search on Layer Pruning
 This repository contains code for the implementation of CoMFLP, a fast search layer pruning algorithm.
 
-*The corresponding paper is under peer review, and will come soon~*
+*The corresponding paper will appear in InterSpeech 2023*
 
 ### Background:
 > The recently proposed DeepNet [^1] model scaled the transformer up to 1,000 layers. Despite the significant performance improvement, the model is inefficient and difficult to apply on the edge device. Layer pruning (LP) is a reasonable method considering the layer redundancy. However, previous LP methods mostly rely on an task-specific evaluation metric to search, which is quite time-consuming especially when layers are very deep. In contrast to previous methods, the proposed CoMFLP has a very fast search speed with a consant time complexity. Also the searched pruning strategy is shown to be high-quality and can serve as a good strating point for later fine-tuning.
@@ -12,9 +12,6 @@ The complete conda environment is exported as `environment.yml`, and `python==3.
 
 ### Code Structure and Usage:
 *We use **clip12to6** as an example for illustration:*
-
-> **Note that** some of the core code is temporarily under a private state (see `.gitignore`). 
-> All of them will be made public after paper publication.
 
 - Correlation Matrix computation: two correlation measure methods are adopted here, namely SVCCA [^2] and DC [^3]. 
 

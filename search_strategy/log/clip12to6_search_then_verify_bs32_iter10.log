@@ -1,0 +1,141 @@
+2023-02-21 16:39:08,029 (utils:71) INFO: Set logging.INFO level.
+2023-02-21 16:39:08,029 (search_prune_then_verify_mix:104) INFO: Loading the corresponding DC matrix between layers of original model
+2023-02-21 16:39:08,029 (search_prune_then_verify_mix:105) INFO: Note this DC matrix is actually DC matrix
+2023-02-21 16:39:08,032 (search_prune_then_verify_mix:132) INFO: Layer Pruning 6 layers from 12 layers
+2023-02-21 16:39:08,036 (search_prune_then_verify_mix:232) INFO: --- Corase layer pruning search finished, Now enter into the verify stage
+2023-02-21 16:39:08,036 (search_prune_then_verify_mix:237) INFO: --- Construct the dataset
+2023-02-21 16:39:08,882 (search_prune_then_verify_mix:256) INFO: -- construct the original 12-layer model
+2023-02-21 16:39:51,730 (utils:71) INFO: Set logging.INFO level.
+2023-02-21 16:39:51,730 (search_prune_then_verify_mix:106) INFO: Loading the corresponding DC matrix between layers of original model
+2023-02-21 16:39:51,730 (search_prune_then_verify_mix:107) INFO: Note this DC matrix is actually DC matrix
+2023-02-21 16:39:51,733 (search_prune_then_verify_mix:134) INFO: Layer Pruning 6 layers from 12 layers
+2023-02-21 16:39:51,737 (search_prune_then_verify_mix:234) INFO: --- Corase layer pruning search finished, Now enter into the verify stage
+2023-02-21 16:39:51,737 (search_prune_then_verify_mix:239) INFO: --- Construct the dataset
+2023-02-21 16:39:52,558 (search_prune_then_verify_mix:258) INFO: -- construct the original 12-layer model
+2023-02-21 16:40:05,062 (search_prune_then_verify_mix:564) INFO: --- Construct the clipped model
+2023-02-21 16:40:20,235 (search_prune_then_verify_mix:656) INFO: For [[1, 1], [3, 4], [7, 7], [9, 9], [11, 11]]: clipped wer : 15.364751452550033%
+2023-02-21 16:40:20,235 (search_prune_then_verify_mix:564) INFO: --- Construct the clipped model
+2023-02-21 16:40:34,845 (search_prune_then_verify_mix:656) INFO: For [[1, 2], [4, 4], [7, 7], [9, 9], [11, 11]]: clipped wer : 44.437271357865285%
+2023-02-21 16:40:34,845 (search_prune_then_verify_mix:564) INFO: --- Construct the clipped model
+2023-02-21 16:40:48,978 (search_prune_then_verify_mix:656) INFO: For [[2, 2], [4, 4], [7, 7], [9, 9], [11, 12]]: clipped wer : 13.341941037228318%
+2023-02-21 16:40:48,979 (search_prune_then_verify_mix:564) INFO: --- Construct the clipped model
+2023-02-21 16:41:03,336 (search_prune_then_verify_mix:656) INFO: For [[1, 1], [3, 3], [7, 7], [9, 9], [11, 12]]: clipped wer : 16.84958037443512%
+2023-02-21 16:41:03,337 (search_prune_then_verify_mix:564) INFO: --- Construct the clipped model
+2023-02-21 16:41:17,493 (search_prune_then_verify_mix:656) INFO: For [[1, 1], [3, 4], [6, 6], [9, 9], [11, 11]]: clipped wer : 19.195179685818808%
+2023-02-21 16:41:17,493 (search_prune_then_verify_mix:564) INFO: --- Construct the clipped model
+2023-02-21 16:41:31,681 (search_prune_then_verify_mix:656) INFO: For [[2, 4], [7, 7], [9, 9], [11, 11]]: clipped wer : 14.568538842263825%
+2023-02-21 16:41:31,681 (search_prune_then_verify_mix:564) INFO: --- Construct the clipped model
+2023-02-21 16:41:45,790 (search_prune_then_verify_mix:656) INFO: For [[1, 1], [4, 4], [7, 7], [9, 9], [11, 12]]: clipped wer : 15.106520335700452%
+2023-02-21 16:41:45,790 (search_prune_then_verify_mix:564) INFO: --- Construct the clipped model
+2023-02-21 16:41:59,818 (search_prune_then_verify_mix:656) INFO: For [[1, 1], [3, 4], [6, 6], [8, 8], [11, 11]]: clipped wer : 16.096406283623843%
+2023-02-21 16:41:59,818 (search_prune_then_verify_mix:564) INFO: --- Construct the clipped model
+2023-02-21 16:42:13,949 (search_prune_then_verify_mix:656) INFO: For [[1, 1], [3, 3], [5, 5], [7, 7], [9, 9], [11, 11]]: clipped wer : 13.148267699591134%
+2023-02-21 16:42:13,950 (search_prune_then_verify_mix:564) INFO: --- Construct the clipped model
+2023-02-21 16:42:28,082 (search_prune_then_verify_mix:656) INFO: For [[1, 1], [3, 4], [7, 7], [9, 9], [12, 12]]: clipped wer : 16.612868517323005%
+2023-02-21 16:42:28,082 (search_prune_then_verify_mix:658) INFO: WERS: [0.15364751452550032, 0.4443727135786529, 0.1334194103722832, 0.1684958037443512, 0.19195179685818808, 0.14568538842263826, 0.15106520335700452, 0.16096406283623843, 0.13148267699591135, 0.16612868517323004]
+2023-02-21 16:42:28,083 (search_prune_then_verify_mix:660) INFO: mean WERS: 18.47213255863998, std WERS: 8.816623234950876
+2023-02-21 16:42:28,083 (search_prune_then_verify_mix:661) INFO: max WERS: 44.437271357865285, min WERS: 13.148267699591134
+2023-02-21 16:42:28,083 (search_prune_then_verify_mix:664) INFO: correlation between wer and correlation measure: 0.35219639795100155 
+2023-02-21 20:51:41,022 (utils:71) INFO: Set logging.INFO level.
+2023-02-21 20:51:41,022 (search_prune_then_verify_mix:107) INFO: Loading the corresponding correation matrix between layers of original model
+2023-02-21 20:51:41,022 (search_prune_then_verify_mix:108) INFO: Note this correlation matrix is actually DC matrix
+2023-02-21 20:51:41,025 (search_prune_then_verify_mix:125) INFO: Layer Pruning 6 layers from 12 layers
+2023-02-21 20:51:52,589 (utils:71) INFO: Set logging.INFO level.
+2023-02-21 20:51:52,589 (search_prune_then_verify_mix:107) INFO: Loading the corresponding correation matrix between layers of original model
+2023-02-21 20:51:52,590 (search_prune_then_verify_mix:108) INFO: Note this correlation matrix is actually DC matrix
+2023-02-21 20:51:52,593 (search_prune_then_verify_mix:125) INFO: Layer Pruning 6 layers from 12 layers
+2023-02-21 21:02:38,680 (utils:71) INFO: Set logging.INFO level.
+2023-02-21 21:02:38,681 (search_prune_then_verify_mix:107) INFO: Loading the corresponding correation matrix between layers of original model
+2023-02-21 21:02:38,681 (search_prune_then_verify_mix:108) INFO: Note this correlation matrix is actually DC matrix
+2023-02-21 21:02:38,684 (search_prune_then_verify_mix:125) INFO: Layer Pruning 6 layers from 12 layers
+2023-02-21 21:02:38,684 (search_prune_then_verify_mix:163) INFO: Greedy search pruning ways
+2023-02-21 21:02:38,684 (search_prune_then_verify_mix:172) INFO: prune 1 layer,  prior_clipped_layers: [[9, 9]]
+2023-02-21 21:02:38,684 (search_prune_then_verify_mix:172) INFO: prune 2 layer,  prior_clipped_layers: [[3, 3], [9, 9]]
+2023-02-21 21:02:38,684 (search_prune_then_verify_mix:172) INFO: prune 3 layer,  prior_clipped_layers: [[3, 3], [7, 7], [9, 9]]
+2023-02-21 21:02:38,684 (search_prune_then_verify_mix:172) INFO: prune 4 layer,  prior_clipped_layers: [[3, 3], [7, 7], [9, 9], [11, 11]]
+2023-02-21 21:02:38,684 (search_prune_then_verify_mix:172) INFO: prune 5 layer,  prior_clipped_layers: [[1, 1], [3, 3], [7, 7], [9, 9], [11, 11]]
+2023-02-21 21:02:38,684 (search_prune_then_verify_mix:172) INFO: prune 6 layer,  prior_clipped_layers: [[1, 1], [3, 4], [7, 7], [9, 9], [11, 11]]
+2023-02-21 21:02:38,685 (search_prune_then_verify_mix:227) INFO: --- Corase layer pruning search finished, Now enter into the verify stage
+2023-02-21 21:02:38,685 (search_prune_then_verify_mix:231) INFO: --- Construct the dataset
+2023-02-21 21:02:39,524 (search_prune_then_verify_mix:247) INFO: -- construct the original 12-layer model
+2023-02-21 21:02:51,133 (search_prune_then_verify_mix:363) INFO: --- Construct the clipped model
+2023-02-21 21:03:00,135 (search_prune_then_verify_mix:418) INFO: For [[1, 1], [3, 4], [7, 7], [9, 9], [11, 11]]: clipped wer : 15.364751452550033%
+2023-02-21 21:10:30,098 (utils:71) INFO: Set logging.INFO level.
+2023-02-21 21:10:30,098 (search_prune_then_verify_mix:107) INFO: Loading the corresponding correation matrix between layers of original model
+2023-02-21 21:10:30,098 (search_prune_then_verify_mix:108) INFO: Note this correlation matrix is actually DC matrix
+2023-02-21 21:10:30,101 (search_prune_then_verify_mix:125) INFO: Layer Pruning 6 layers from 12 layers
+2023-02-21 21:10:30,101 (search_prune_then_verify_mix:129) INFO: Exhausitive search 924 pruning ways
+2023-02-21 21:10:30,107 (search_prune_then_verify_mix:160) INFO: 1-th layer prunning (dc_measure: 0.9710103154182435): [[1, 1], [3, 4], [7, 7], [9, 9], [11, 11]]
+2023-02-21 21:10:30,108 (search_prune_then_verify_mix:160) INFO: 2-th layer prunning (dc_measure: 0.9667840600013733): [[1, 2], [4, 4], [7, 7], [9, 9], [11, 11]]
+2023-02-21 21:10:30,108 (search_prune_then_verify_mix:160) INFO: 3-th layer prunning (dc_measure: 0.9637413382530212): [[2, 2], [4, 4], [7, 7], [9, 9], [11, 12]]
+2023-02-21 21:10:30,108 (search_prune_then_verify_mix:160) INFO: 4-th layer prunning (dc_measure: 0.9631722092628479): [[1, 1], [3, 3], [7, 7], [9, 9], [11, 12]]
+2023-02-21 21:10:30,108 (search_prune_then_verify_mix:160) INFO: 5-th layer prunning (dc_measure: 0.962876844406128): [[1, 1], [3, 4], [6, 6], [9, 9], [11, 11]]
+2023-02-21 21:10:30,108 (search_prune_then_verify_mix:160) INFO: 6-th layer prunning (dc_measure: 0.9626750499010086): [[2, 4], [7, 7], [9, 9], [11, 11]]
+2023-02-21 21:10:30,108 (search_prune_then_verify_mix:160) INFO: 7-th layer prunning (dc_measure: 0.9616890549659729): [[1, 1], [4, 4], [7, 7], [9, 9], [11, 12]]
+2023-02-21 21:10:30,108 (search_prune_then_verify_mix:160) INFO: 8-th layer prunning (dc_measure: 0.9615383267402648): [[1, 1], [3, 4], [6, 6], [8, 8], [11, 11]]
+2023-02-21 21:10:30,108 (search_prune_then_verify_mix:160) INFO: 9-th layer prunning (dc_measure: 0.9612712264060974): [[1, 1], [3, 3], [5, 5], [7, 7], [9, 9], [11, 11]]
+2023-02-21 21:10:30,108 (search_prune_then_verify_mix:160) INFO: 10-th layer prunning (dc_measure: 0.9612265944480896): [[1, 1], [3, 4], [7, 7], [9, 9], [12, 12]]
+2023-02-21 21:10:30,108 (search_prune_then_verify_mix:227) INFO: --- Corase layer pruning search finished, Now enter into the verify stage
+2023-02-21 21:10:30,108 (search_prune_then_verify_mix:231) INFO: --- Construct the dataset
+2023-02-21 21:10:30,965 (search_prune_then_verify_mix:247) INFO: -- construct the original 12-layer model
+2023-02-21 21:10:43,588 (search_prune_then_verify_mix:275) INFO: 1-th layer prunning (dc_measure: 0.9710103154182435): [[1, 1], [3, 4], [7, 7], [9, 9], [11, 11]]
+2023-02-21 21:10:43,589 (search_prune_then_verify_mix:282) INFO: --- Construct the clipped model
+2023-02-21 21:10:52,561 (search_prune_then_verify_mix:350) INFO: For [[1, 1], [3, 4], [7, 7], [9, 9], [11, 11]]: clipped wer : 15.364751452550033%
+2023-02-21 21:10:52,561 (search_prune_then_verify_mix:275) INFO: 2-th layer prunning (dc_measure: 0.9667840600013733): [[1, 2], [4, 4], [7, 7], [9, 9], [11, 11]]
+2023-02-21 21:10:52,561 (search_prune_then_verify_mix:282) INFO: --- Construct the clipped model
+2023-02-21 21:11:00,154 (search_prune_then_verify_mix:350) INFO: For [[1, 2], [4, 4], [7, 7], [9, 9], [11, 11]]: clipped wer : 44.437271357865285%
+2023-02-21 21:11:00,154 (search_prune_then_verify_mix:275) INFO: 3-th layer prunning (dc_measure: 0.9637413382530212): [[2, 2], [4, 4], [7, 7], [9, 9], [11, 12]]
+2023-02-21 21:11:00,154 (search_prune_then_verify_mix:282) INFO: --- Construct the clipped model
+2023-02-21 21:11:08,025 (search_prune_then_verify_mix:350) INFO: For [[2, 2], [4, 4], [7, 7], [9, 9], [11, 12]]: clipped wer : 13.341941037228318%
+2023-02-21 21:11:08,025 (search_prune_then_verify_mix:275) INFO: 4-th layer prunning (dc_measure: 0.9631722092628479): [[1, 1], [3, 3], [7, 7], [9, 9], [11, 12]]
+2023-02-21 21:11:08,025 (search_prune_then_verify_mix:282) INFO: --- Construct the clipped model
+2023-02-21 21:11:16,076 (search_prune_then_verify_mix:350) INFO: For [[1, 1], [3, 3], [7, 7], [9, 9], [11, 12]]: clipped wer : 16.84958037443512%
+2023-02-21 21:11:16,077 (search_prune_then_verify_mix:275) INFO: 5-th layer prunning (dc_measure: 0.962876844406128): [[1, 1], [3, 4], [6, 6], [9, 9], [11, 11]]
+2023-02-21 21:11:16,077 (search_prune_then_verify_mix:282) INFO: --- Construct the clipped model
+2023-02-21 21:11:24,052 (search_prune_then_verify_mix:350) INFO: For [[1, 1], [3, 4], [6, 6], [9, 9], [11, 11]]: clipped wer : 19.195179685818808%
+2023-02-21 21:11:24,053 (search_prune_then_verify_mix:275) INFO: 6-th layer prunning (dc_measure: 0.9626750499010086): [[2, 4], [7, 7], [9, 9], [11, 11]]
+2023-02-21 21:11:24,053 (search_prune_then_verify_mix:282) INFO: --- Construct the clipped model
+2023-02-21 21:11:31,674 (search_prune_then_verify_mix:350) INFO: For [[2, 4], [7, 7], [9, 9], [11, 11]]: clipped wer : 14.568538842263825%
+2023-02-21 21:11:31,675 (search_prune_then_verify_mix:275) INFO: 7-th layer prunning (dc_measure: 0.9616890549659729): [[1, 1], [4, 4], [7, 7], [9, 9], [11, 12]]
+2023-02-21 21:11:31,675 (search_prune_then_verify_mix:282) INFO: --- Construct the clipped model
+2023-02-21 21:11:39,452 (search_prune_then_verify_mix:350) INFO: For [[1, 1], [4, 4], [7, 7], [9, 9], [11, 12]]: clipped wer : 15.106520335700452%
+2023-02-21 21:11:39,452 (search_prune_then_verify_mix:275) INFO: 8-th layer prunning (dc_measure: 0.9615383267402648): [[1, 1], [3, 4], [6, 6], [8, 8], [11, 11]]
+2023-02-21 21:11:39,452 (search_prune_then_verify_mix:282) INFO: --- Construct the clipped model
+2023-02-21 21:11:47,493 (search_prune_then_verify_mix:350) INFO: For [[1, 1], [3, 4], [6, 6], [8, 8], [11, 11]]: clipped wer : 16.096406283623843%
+2023-02-21 21:11:47,493 (search_prune_then_verify_mix:275) INFO: 9-th layer prunning (dc_measure: 0.9612712264060974): [[1, 1], [3, 3], [5, 5], [7, 7], [9, 9], [11, 11]]
+2023-02-21 21:11:47,493 (search_prune_then_verify_mix:282) INFO: --- Construct the clipped model
+2023-02-21 21:11:55,248 (search_prune_then_verify_mix:350) INFO: For [[1, 1], [3, 3], [5, 5], [7, 7], [9, 9], [11, 11]]: clipped wer : 13.148267699591134%
+2023-02-21 21:11:55,249 (search_prune_then_verify_mix:275) INFO: 10-th layer prunning (dc_measure: 0.9612265944480896): [[1, 1], [3, 4], [7, 7], [9, 9], [12, 12]]
+2023-02-21 21:11:55,249 (search_prune_then_verify_mix:282) INFO: --- Construct the clipped model
+2023-02-21 21:12:03,083 (search_prune_then_verify_mix:350) INFO: For [[1, 1], [3, 4], [7, 7], [9, 9], [12, 12]]: clipped wer : 16.612868517323005%
+2023-02-21 21:12:03,083 (search_prune_then_verify_mix:354) INFO: WERs: [0.15364751452550032, 0.4443727135786529, 0.1334194103722832, 0.1684958037443512, 0.19195179685818808, 0.14568538842263826, 0.15106520335700452, 0.16096406283623843, 0.13148267699591135, 0.16612868517323004]
+2023-02-21 21:16:23,950 (utils:71) INFO: Set logging.INFO level.
+2023-02-21 21:16:23,950 (search_prune_then_verify_mix:105) INFO: Loading the corresponding correation matrix between layers of original model
+2023-02-21 21:16:23,950 (search_prune_then_verify_mix:106) INFO: Note this correlation matrix is actually DC matrix
+2023-02-21 21:16:23,953 (search_prune_then_verify_mix:123) INFO: Layer Pruning 6 layers from 12 layers
+2023-02-21 21:16:23,957 (search_prune_then_verify_mix:225) INFO: --- Corase layer pruning search finished, Now enter into the verify stage
+2023-02-21 21:16:23,957 (search_prune_then_verify_mix:229) INFO: --- Construct the dataset
+2023-02-21 21:16:24,803 (search_prune_then_verify_mix:243) INFO: -- construct the original 12-layer model
+2023-02-21 21:16:37,285 (search_prune_then_verify_mix:424) INFO: --- Construct the clipped model
+2023-02-21 21:16:45,984 (search_prune_then_verify_mix:488) INFO: For [[1, 1], [3, 4], [7, 7], [9, 9], [11, 11]]: clipped wer : 15.364751452550033%
+2023-02-21 21:16:45,984 (search_prune_then_verify_mix:424) INFO: --- Construct the clipped model
+2023-02-21 21:16:54,090 (search_prune_then_verify_mix:488) INFO: For [[1, 2], [4, 4], [7, 7], [9, 9], [11, 11]]: clipped wer : 44.437271357865285%
+2023-02-21 21:16:54,091 (search_prune_then_verify_mix:424) INFO: --- Construct the clipped model
+2023-02-21 21:17:02,112 (search_prune_then_verify_mix:488) INFO: For [[2, 2], [4, 4], [7, 7], [9, 9], [11, 12]]: clipped wer : 13.341941037228318%
+2023-02-21 21:17:02,112 (search_prune_then_verify_mix:424) INFO: --- Construct the clipped model
+2023-02-21 21:17:10,081 (search_prune_then_verify_mix:488) INFO: For [[1, 1], [3, 3], [7, 7], [9, 9], [11, 12]]: clipped wer : 16.84958037443512%
+2023-02-21 21:17:10,081 (search_prune_then_verify_mix:424) INFO: --- Construct the clipped model
+2023-02-21 21:17:18,200 (search_prune_then_verify_mix:488) INFO: For [[1, 1], [3, 4], [6, 6], [9, 9], [11, 11]]: clipped wer : 19.195179685818808%
+2023-02-21 21:17:18,200 (search_prune_then_verify_mix:424) INFO: --- Construct the clipped model
+2023-02-21 21:17:25,964 (search_prune_then_verify_mix:488) INFO: For [[2, 4], [7, 7], [9, 9], [11, 11]]: clipped wer : 14.568538842263825%
+2023-02-21 21:17:25,964 (search_prune_then_verify_mix:424) INFO: --- Construct the clipped model
+2023-02-21 21:17:34,091 (search_prune_then_verify_mix:488) INFO: For [[1, 1], [4, 4], [7, 7], [9, 9], [11, 12]]: clipped wer : 15.106520335700452%
+2023-02-21 21:17:34,091 (search_prune_then_verify_mix:424) INFO: --- Construct the clipped model
+2023-02-21 21:17:41,981 (search_prune_then_verify_mix:488) INFO: For [[1, 1], [3, 4], [6, 6], [8, 8], [11, 11]]: clipped wer : 16.096406283623843%
+2023-02-21 21:17:41,981 (search_prune_then_verify_mix:424) INFO: --- Construct the clipped model
+2023-02-21 21:17:49,941 (search_prune_then_verify_mix:488) INFO: For [[1, 1], [3, 3], [5, 5], [7, 7], [9, 9], [11, 11]]: clipped wer : 13.148267699591134%
+2023-02-21 21:17:49,941 (search_prune_then_verify_mix:424) INFO: --- Construct the clipped model
+2023-02-21 21:17:57,779 (search_prune_then_verify_mix:488) INFO: For [[1, 1], [3, 4], [7, 7], [9, 9], [12, 12]]: clipped wer : 16.612868517323005%
+2023-02-21 21:17:57,779 (search_prune_then_verify_mix:490) INFO: WERS: [0.15364751452550032, 0.4443727135786529, 0.1334194103722832, 0.1684958037443512, 0.19195179685818808, 0.14568538842263826, 0.15106520335700452, 0.16096406283623843, 0.13148267699591135, 0.16612868517323004]
+2023-02-21 21:17:57,779 (search_prune_then_verify_mix:493) INFO: mean WERS: 18.47213255863998, std WERS: 8.816623234950876
+2023-02-21 21:17:57,779 (search_prune_then_verify_mix:494) INFO: max WERS: 44.437271357865285, min WERS: 13.148267699591134

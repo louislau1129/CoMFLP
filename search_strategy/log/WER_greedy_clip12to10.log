@@ -1,0 +1,7 @@
+2023-02-21 21:25:43,490 (utils:71) INFO: Set logging.INFO level.
+2023-02-21 21:25:43,491 (wer_based_greedy_search:169) INFO: Layer Pruning 2 layers from 12 layers
+2023-02-21 21:25:43,491 (wer_based_greedy_search:171) INFO: --- Construct the dataset
+2023-02-21 21:25:44,300 (wer_based_greedy_search:184) INFO: -- construct the original 12-layer model
+2023-02-21 21:25:56,235 (wer_based_greedy_search:208) INFO: Greedy search pruning ways
+2023-02-21 21:29:24,396 (wer_based_greedy_search:218) INFO: prune 1 layer,  prior_clipped_layers: [[10, 10]],                             best_wer: 3.572197116419195%
+2023-02-21 21:32:25,465 (wer_based_greedy_search:218) INFO: prune 2 layer,  prior_clipped_layers: [[4, 4], [10, 10]],                             best_wer: 3.959543791693566%
