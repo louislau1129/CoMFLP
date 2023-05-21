@@ -8,7 +8,7 @@ This repository contains code for the implementation of CoMFLP, a fast search la
 
 
 ### Python Env:
-The complete conda environment is exported as `environment.yml`, and `python==3.8.10`.
+The conda environment is exported as `environment.yml`, and `python==3.8.10`.
 
 ### Code Structure and Usage:
 *We use **clip12to6** as an example for illustration:*
