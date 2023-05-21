@@ -89,7 +89,7 @@ We put the above `AISHELL1` directory in the current repository for your referen
 
 > The original ASR deep model is exported from the Huggingface website. Due to the limited computational resources, we only test `12-layer` and `24-layer` transformers. (Note that only `12-layer` example code is given in this repository, and it is easy to extend it to `24-layer` or other number of layers.)
 
-**We really appreciate if interested people could help using this CoMFLP method to test on much deeper layers under different tasks. Due to limited computational resources, we only tested 12-layer with FT**
+**We really appreciate if interested people could help using this CoMFLP method to test on much deeper layers under different tasks. Due to the limited computational resources, we only tested 12-layer with fine-tune.**
 
 
 ## Referenced repositories
